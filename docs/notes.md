@@ -22,3 +22,12 @@ Types to use:
 - refactor: code change that's neither a fix nor a feature
 - test: adding/fixing tests
 - chore: tooling, dependencies, build config
+
+## Editor sluggyishness and stuck popup editor solutions
+
+To solve the "sluggyishness", turn off the editor vsync,
+EditorSettings → interface/editor/display/vsync_mode — controls the editor's own V-Sync.
+Then to lower the chance of popup getting stuck,
+go to Editor Settings → Interface → Enable Single Window Mode.
+I could have also toggle off the project vsync, and also make the project display server to
+use wayland. But these affects the exported project so I think I am fine with just these.
