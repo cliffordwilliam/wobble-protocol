@@ -1,0 +1,7 @@
+class_name LightOrbParticles
+extends GPUParticles2D
+
+
+func _ready() -> void:
+	finished.connect(queue_free)
+	emitting = true

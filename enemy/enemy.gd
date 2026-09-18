@@ -14,6 +14,7 @@ const RAY_LENGTH_MAX := 400.0
 const SmokeParticlesScene := preload("res://enemy/smoke_particles.tscn")
 const LightFlashScene := preload("res://enemy/light_flash.tscn")
 const LightRayScene := preload("res://enemy/light_ray.tscn")
+const LightOrbParticlesScene := preload("res://enemy/light_orb_particles.tscn")
 
 
 @onready var state_machine: StateMachine = $StateMachine
@@ -48,6 +49,10 @@ func _die() -> void:
 	var light_flash: LightFlash = LightFlashScene.instantiate()
 	light_flash.global_position = collision_shape.global_position
 	get_parent().add_child(light_flash)
+
+	var light_orbs: LightOrbParticles = LightOrbParticlesScene.instantiate()
+	light_orbs.global_position = collision_shape.global_position
+	get_parent().add_child(light_orbs)
 
 	var angle_window := TAU / RAY_COUNT
 	for i in RAY_COUNT:
