@@ -2,17 +2,15 @@
 
 [ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="1_augnm"]
 [ext_resource type="Script" uid="uid://bmub4b3gdrde4" path="res://enemy/smoke_particles.gd" id="1_t3cqb"]
+[ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="2_vqd15"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vqd15"]
 gradient = ExtResource("1_augnm")
 width = 40
 height = 40
 
-[sub_resource type="Gradient" id="Gradient_vqd15"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qa1n0"]
-gradient = SubResource("Gradient_vqd15")
+gradient = ExtResource("2_vqd15")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_82lbg"]
 particle_flag_disable_z = true

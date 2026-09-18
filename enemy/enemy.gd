@@ -7,7 +7,13 @@ const SQUISH_IMPACT_DURATION := 0.1
 const SQUISH_SCALE := Vector2(1.2, 0.5)
 const SQUISH_FROM_SCALE := Vector2(1.5, 0.2)
 
+const RAY_COUNT := 4
+const RAY_LENGTH_MIN := 300.0
+const RAY_LENGTH_MAX := 400.0
+
 const SmokeParticlesScene := preload("res://enemy/smoke_particles.tscn")
+const LightFlashScene := preload("res://enemy/light_flash.tscn")
+const LightRayScene := preload("res://enemy/light_ray.tscn")
 
 
 @onready var state_machine: StateMachine = $StateMachine
@@ -38,4 +44,17 @@ func _die() -> void:
 	var smoke: SmokeParticles = SmokeParticlesScene.instantiate()
 	smoke.global_position = collision_shape.global_position
 	get_parent().add_child(smoke)
+
+	var light_flash: LightFlash = LightFlashScene.instantiate()
+	light_flash.global_position = collision_shape.global_position
+	get_parent().add_child(light_flash)
+
+	var angle_window := TAU / RAY_COUNT
+	for i in RAY_COUNT:
+		var light_ray: LightRay = LightRayScene.instantiate()
+		light_ray.global_position = collision_shape.global_position
+		light_ray.rotation = angle_window * i + randf_range(0.0, angle_window)
+		light_ray.points = PackedVector2Array([Vector2.ZERO, Vector2(randf_range(RAY_LENGTH_MIN, RAY_LENGTH_MAX), 0.0)])
+		get_parent().add_child(light_ray)
+
 	queue_free()

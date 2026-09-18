@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ckjjtibtyevxm"]
+
+[ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="1_f7xho"]
+[ext_resource type="Script" uid="uid://cn20l42rvkqtk" path="res://enemy/light_flash.gd" id="1_oruob"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etl30"]
+blend_mode = 1
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xdmtp"]
+gradient = ExtResource("1_f7xho")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="LightFlash" type="Sprite2D" unique_id=2140039206]
+material = SubResource("CanvasItemMaterial_etl30")
+texture = SubResource("GradientTexture2D_xdmtp")
+script = ExtResource("1_oruob")

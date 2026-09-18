@@ -25,6 +25,7 @@ func _check_enemy_collision(is_falling: bool) -> void:
 		if collider is Enemy:
 			if is_falling:
 				collider.squish()
+				play_bounce()
 				velocity.y = JUMP_VELOCITY
 			else:
 				queue_free()
