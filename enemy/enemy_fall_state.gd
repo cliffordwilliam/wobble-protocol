@@ -9,7 +9,7 @@ func enter(_previous_state: State = null) -> void:
 func physics_process(delta: float) -> void:
 	enemy.apply_gravity(delta)
 
-	enemy.velocity.x = enemy.direction * Enemy.SPEED
+	enemy.move_horizontal()
 	enemy.move_and_slide()
 
 	enemy.update_air_squash()

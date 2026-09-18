@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://70u3fko08rfr" path="res://state_machine/state_machine.gd" id="2_p200p"]
 [ext_resource type="Script" uid="uid://e5ed5au2ethg" path="res://enemy/enemy_walk_state.gd" id="3_pmsee"]
 [ext_resource type="Script" uid="uid://dbuwtw6epm8ox" path="res://enemy/enemy_fall_state.gd" id="5_pmsee"]
+[ext_resource type="Script" uid="uid://cjvehyab2a5gr" path="res://enemy/enemy_squished_state.gd" id="6_1wwld"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cgllh"]
 gradient = ExtResource("1_ppra6")
@@ -36,3 +37,7 @@ metadata/_custom_type_script = "uid://e5ed5au2ethg"
 [node name="EnemyFallState" type="Node" parent="StateMachine" unique_id=165726140]
 script = ExtResource("5_pmsee")
 metadata/_custom_type_script = "uid://dbuwtw6epm8ox"
+
+[node name="EnemySquishedState" type="Node" parent="StateMachine" unique_id=1270382084]
+script = ExtResource("6_1wwld")
+metadata/_custom_type_script = "uid://cjvehyab2a5gr"

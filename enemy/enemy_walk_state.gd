@@ -8,7 +8,7 @@ func enter(previous_state: State = null) -> void:
 
 
 func physics_process(_delta: float) -> void:
-	enemy.velocity.x = enemy.direction * Enemy.SPEED
+	enemy.move_horizontal()
 	enemy.move_and_slide()
 
 	if not enemy.is_on_floor():

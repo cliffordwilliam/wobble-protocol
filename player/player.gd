@@ -6,11 +6,25 @@ const ACCELERATION := 1476.563
 const RISE_GRAVITY := 1012.5
 const JUMP_VELOCITY := -928.125
 
-const MAX_TILT_ANGLE := deg_to_rad(5.0)
-
 
 func move_horizontal(delta: float) -> float:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	velocity.x = move_toward(velocity.x, direction * MAX_SPEED, ACCELERATION * delta)
-	sprite.rotation = remap(velocity.x, -MAX_SPEED, MAX_SPEED, MAX_TILT_ANGLE, -MAX_TILT_ANGLE)
+	apply_tilt(MAX_SPEED)
 	return direction
+
+
+func move(is_falling: bool = false) -> void:
+	move_and_slide()
+	_check_enemy_collision(is_falling)
+
+
+func _check_enemy_collision(is_falling: bool) -> void:
+	for i in get_slide_collision_count():
+		var collider := get_slide_collision(i).get_collider()
+		if collider is Enemy:
+			if is_falling:
+				collider.squish()
+				velocity.y = JUMP_VELOCITY
+			else:
+				queue_free()

@@ -10,6 +10,8 @@ const LAND_SQUASH_SCALE := Vector2(1.3, 0.7)
 const AIR_SQUASH_MAX_Y := 1.2
 const AIR_SQUASH_MIN_X := 0.9
 
+const MAX_TILT_ANGLE := deg_to_rad(4.0)
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 var _squash_tween: Tween
@@ -17,6 +19,10 @@ var _squash_tween: Tween
 
 func apply_gravity(delta: float, gravity: float = FALL_GRAVITY) -> void:
 	velocity.y = min(velocity.y + gravity * delta, MAX_FALL_SPEED)
+
+
+func apply_tilt(max_speed: float) -> void:
+	sprite.rotation = remap(velocity.x, -max_speed, max_speed, MAX_TILT_ANGLE, -MAX_TILT_ANGLE)
 
 
 func update_air_squash() -> void:
