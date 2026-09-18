@@ -1,7 +1,6 @@
 class_name State
 extends Node
 
-@onready var player: Player = owner
 @onready var state_machine: StateMachine = get_parent()
 
 

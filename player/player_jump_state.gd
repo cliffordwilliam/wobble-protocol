@@ -1,5 +1,5 @@
-class_name JumpState
-extends State
+class_name PlayerJumpState
+extends PlayerState
 
 
 func enter(_previous_state: State = null) -> void:
@@ -9,11 +9,10 @@ func enter(_previous_state: State = null) -> void:
 
 func physics_process(delta: float) -> void:
 	var held := Input.is_action_pressed("ui_accept")
-	var gravity := Player.RISE_GRAVITY if held else Player.FALL_GRAVITY
-	player.velocity.y = min(player.velocity.y + gravity * delta, Player.MAX_FALL_SPEED)
+	player.apply_gravity(delta, Player.RISE_GRAVITY if held else Player.FALL_GRAVITY)
 
 	player.move_horizontal(delta)
 	player.move_and_slide()
 
 	if player.velocity.y >= 0.0:
-		state_machine.transition_to("FallState")
+		state_machine.transition_to("PlayerFallState")

@@ -1,17 +1,15 @@
 [gd_scene format=3 uid="uid://d16mnkjkusj6w"]
 
-[ext_resource type="Script" uid="uid://bf8cmiyruq806" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://70u3fko08rfr" path="res://state_machine.gd" id="2_sweqy"]
-[ext_resource type="Script" uid="uid://555jiigle6q" path="res://idle_state.gd" id="3_2hs0m"]
-[ext_resource type="Script" uid="uid://bs28esb060p28" path="res://walk_state.gd" id="4_1jxqw"]
-[ext_resource type="Script" uid="uid://cckj4wash7w01" path="res://jump_state.gd" id="5_dw050"]
-[ext_resource type="Script" uid="uid://yy1rd3nkci1j" path="res://fall_state.gd" id="6_2hs0m"]
-
-[sub_resource type="Gradient" id="Gradient_4flbx"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+[ext_resource type="Script" uid="uid://bf8cmiyruq806" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="2_boad6"]
+[ext_resource type="Script" uid="uid://70u3fko08rfr" path="res://state_machine/state_machine.gd" id="2_sweqy"]
+[ext_resource type="Script" uid="uid://555jiigle6q" path="res://player/player_idle_state.gd" id="3_2hs0m"]
+[ext_resource type="Script" uid="uid://bs28esb060p28" path="res://player/player_walk_state.gd" id="4_1jxqw"]
+[ext_resource type="Script" uid="uid://cckj4wash7w01" path="res://player/player_jump_state.gd" id="5_dw050"]
+[ext_resource type="Script" uid="uid://yy1rd3nkci1j" path="res://player/player_fall_state.gd" id="6_2hs0m"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i3pqv"]
-gradient = SubResource("Gradient_4flbx")
+gradient = ExtResource("2_boad6")
 width = 120
 height = 144
 
@@ -33,18 +31,18 @@ shape = SubResource("RectangleShape2D_n8mn6")
 script = ExtResource("2_sweqy")
 metadata/_custom_type_script = "uid://70u3fko08rfr"
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=1777698516]
+[node name="PlayerIdleState" type="Node" parent="StateMachine" unique_id=1777698516]
 script = ExtResource("3_2hs0m")
 metadata/_custom_type_script = "uid://555jiigle6q"
 
-[node name="WalkState" type="Node" parent="StateMachine" unique_id=495470088]
+[node name="PlayerWalkState" type="Node" parent="StateMachine" unique_id=495470088]
 script = ExtResource("4_1jxqw")
 metadata/_custom_type_script = "uid://bs28esb060p28"
 
-[node name="JumpState" type="Node" parent="StateMachine" unique_id=1320215214]
+[node name="PlayerJumpState" type="Node" parent="StateMachine" unique_id=1320215214]
 script = ExtResource("5_dw050")
 metadata/_custom_type_script = "uid://cckj4wash7w01"
 
-[node name="FallState" type="Node" parent="StateMachine" unique_id=1502732925]
+[node name="PlayerFallState" type="Node" parent="StateMachine" unique_id=1502732925]
 script = ExtResource("6_2hs0m")
 metadata/_custom_type_script = "uid://yy1rd3nkci1j"

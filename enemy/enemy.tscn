@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d2oi43ue67sbe"]
+
+[ext_resource type="Script" uid="uid://djks70w1v3177" path="res://enemy/enemy.gd" id="1_p200p"]
+[ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="1_ppra6"]
+[ext_resource type="Script" uid="uid://70u3fko08rfr" path="res://state_machine/state_machine.gd" id="2_p200p"]
+[ext_resource type="Script" uid="uid://e5ed5au2ethg" path="res://enemy/enemy_walk_state.gd" id="3_pmsee"]
+[ext_resource type="Script" uid="uid://dbuwtw6epm8ox" path="res://enemy/enemy_fall_state.gd" id="5_pmsee"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgllh"]
+gradient = ExtResource("1_ppra6")
+width = 120
+height = 120
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
+size = Vector2(120, 120)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1196418272]
+script = ExtResource("1_p200p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=970109914]
+texture = SubResource("GradientTexture2D_cgllh")
+offset = Vector2(0, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1947343799]
+position = Vector2(0, -60)
+shape = SubResource("RectangleShape2D_rgyib")
+
+[node name="StateMachine" type="Node" parent="." unique_id=2021014724]
+script = ExtResource("2_p200p")
+metadata/_custom_type_script = "uid://70u3fko08rfr"
+
+[node name="EnemyWalkState" type="Node" parent="StateMachine" unique_id=54378761]
+script = ExtResource("3_pmsee")
+metadata/_custom_type_script = "uid://e5ed5au2ethg"
+
+[node name="EnemyFallState" type="Node" parent="StateMachine" unique_id=165726140]
+script = ExtResource("5_pmsee")
+metadata/_custom_type_script = "uid://dbuwtw6epm8ox"
