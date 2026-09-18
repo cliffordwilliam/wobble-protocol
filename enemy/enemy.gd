@@ -11,10 +11,13 @@ const RAY_COUNT := 4
 const RAY_LENGTH_MIN := 300.0
 const RAY_LENGTH_MAX := 400.0
 
+const HIT_RAY_COUNT := 2
+
 const SmokeParticlesScene := preload("res://enemy/smoke_particles.tscn")
 const LightFlashScene := preload("res://enemy/light_flash.tscn")
 const LightRayScene := preload("res://enemy/light_ray.tscn")
 const LightOrbParticlesScene := preload("res://enemy/light_orb_particles.tscn")
+const HitRayScene := preload("res://enemy/hit_ray.tscn")
 
 
 @onready var state_machine: StateMachine = $StateMachine
@@ -29,6 +32,13 @@ func move_horizontal() -> void:
 
 
 func squish() -> void:
+	var hit_angle_window := TAU / HIT_RAY_COUNT
+	for i in HIT_RAY_COUNT:
+		var hit_ray: HitRay = HitRayScene.instantiate()
+		hit_ray.global_position = collision_shape.global_position
+		hit_ray.rotation = hit_angle_window * i + randf_range(0.0, hit_angle_window)
+		get_parent().add_child(hit_ray)
+
 	state_machine.transition_to("EnemySquishedState")
 
 
