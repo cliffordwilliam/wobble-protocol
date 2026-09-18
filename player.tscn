@@ -29,9 +29,8 @@ offset = Vector2(0, -72)
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_n8mn6")
 
-[node name="StateMachine" type="Node" parent="." unique_id=922946872 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=922946872]
 script = ExtResource("2_sweqy")
-initial_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://70u3fko08rfr"
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1777698516]

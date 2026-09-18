@@ -2,8 +2,8 @@ class_name WalkState
 extends State
 
 
-func enter(msg: Dictionary = {}) -> void:
-	if msg.get("from") is FallState:
+func enter(previous_state: State = null) -> void:
+	if previous_state is FallState:
 		player.play_bounce()
 
 

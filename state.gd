@@ -5,7 +5,7 @@ extends Node
 @onready var state_machine: StateMachine = get_parent()
 
 
-func enter(_msg: Dictionary = {}) -> void:
+func enter(_previous_state: State = null) -> void:
 	pass
 
 
@@ -14,8 +14,4 @@ func exit() -> void:
 
 
 func physics_process(_delta: float) -> void:
-	pass
-
-
-func unhandled_input(_event: InputEvent) -> void:
 	pass

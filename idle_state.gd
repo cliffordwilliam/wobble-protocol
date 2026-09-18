@@ -2,10 +2,10 @@ class_name IdleState
 extends State
 
 
-func enter(msg: Dictionary = {}) -> void:
-	if msg.get("from") is FallState:
+func enter(previous_state: State = null) -> void:
+	if previous_state is FallState:
 		player.play_bounce()
-	elif msg.get("from") is WalkState and player.is_on_wall():
+	elif previous_state is WalkState and player.is_on_wall():
 		player.play_bounce()
 
 

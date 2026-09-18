@@ -2,7 +2,7 @@ class_name JumpState
 extends State
 
 
-func enter(_msg: Dictionary = {}) -> void:
+func enter(_previous_state: State = null) -> void:
 	player.play_bounce()
 	player.velocity.y = Player.JUMP_VELOCITY
 

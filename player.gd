@@ -23,12 +23,9 @@ var _squash_tween: Tween
 
 func play_bounce() -> void:
 	cancel_squash()
-
-	sprite.scale = LAND_SQUASH_SCALE
-	_squash_tween = create_tween()
-	_squash_tween.set_trans(Tween.TRANS_ELASTIC)
-	_squash_tween.set_ease(Tween.EASE_OUT)
-	_squash_tween.tween_property(sprite, "scale", Vector2.ONE, LAND_SQUASH_DURATION)
+	_squash_tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	_squash_tween.tween_property(sprite, "scale", Vector2.ONE, LAND_SQUASH_DURATION) \
+	.from(LAND_SQUASH_SCALE)
 
 
 func cancel_squash() -> void:
