@@ -19,9 +19,10 @@ sources/0 = SubResource("TileSetAtlasSource_coq8p")
 [node name="Node" type="Node" unique_id=1139093061]
 
 [node name="Player" parent="." unique_id=1504388918 instance=ExtResource("1_uhqqe")]
+position = Vector2(240, 960)
 
 [node name="Enemy" parent="." unique_id=1196418272 instance=ExtResource("2_ia1lp")]
-position = Vector2(769, 53)
+position = Vector2(840, 960)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=315036525]
 tile_map_data = PackedByteArray("AAAPAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAA=")

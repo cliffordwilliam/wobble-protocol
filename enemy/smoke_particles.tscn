@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://crymc0d6mg2w6"]
+
+[ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="1_augnm"]
+[ext_resource type="Script" uid="uid://bmub4b3gdrde4" path="res://enemy/smoke_particles.gd" id="1_t3cqb"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vqd15"]
+gradient = ExtResource("1_augnm")
+width = 40
+height = 40
+
+[sub_resource type="Gradient" id="Gradient_vqd15"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qa1n0"]
+gradient = SubResource("Gradient_vqd15")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_82lbg"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 660.0
+initial_velocity_max = 900.0
+gravity = Vector3(0, 0, 0)
+damping_min = 1050.0
+damping_max = 1500.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_qa1n0")
+
+[node name="SmokeParticles" type="GPUParticles2D" unique_id=1701251919]
+emitting = false
+amount = 10
+texture = SubResource("GradientTexture2D_vqd15")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_82lbg")
+script = ExtResource("1_t3cqb")
