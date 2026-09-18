@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" format=3 uid="uid://bkuu7dvondyf1"]
+
+[ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="1_ef0qm"]
+
+[resource]
+gradient = ExtResource("1_ef0qm")
+width = 120
+height = 120

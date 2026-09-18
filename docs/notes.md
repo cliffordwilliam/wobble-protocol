@@ -54,3 +54,10 @@ const BASE_JUMP_VELOCITY := -206.25
 
 const HORIZONTAL_SCALE := 1920.0 / 256.0  # 7.5
 const VERTICAL_SCALE := 1080.0 / 240.0  # 4.5
+
+## Using no assets
+
+This game rely on built in resources for the visual rendering.
+For the actors, we use reusable gradient resource and per actor creates inline gradient texture 2d.
+Tiles uses reusable gradient texture 2d instead.
+Actor can have different color using modulate, tiles can use per tile modulate attribute.

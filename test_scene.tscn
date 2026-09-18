@@ -1,39 +1,28 @@
-[gd_scene format=3 uid="uid://cmfdiulrm7wj8"]
+[gd_scene format=4 uid="uid://cmfdiulrm7wj8"]
 
 [ext_resource type="PackedScene" uid="uid://d16mnkjkusj6w" path="res://player/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://d2oi43ue67sbe" path="res://enemy/enemy.tscn" id="2_ia1lp"]
+[ext_resource type="Texture2D" uid="uid://bkuu7dvondyf1" path="res://tile_gradient_texture_2d.tres" id="3_sasra"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8mn6"]
-size = Vector2(1977, 94)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coq8p"]
+texture = ExtResource("3_sasra")
+texture_region_size = Vector2i(120, 120)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ify7c"]
-size = Vector2(88, 232)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv6uw"]
-size = Vector2(109, 201)
+[sub_resource type="TileSet" id="TileSet_n8mn6"]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_coq8p")
 
 [node name="Node" type="Node" unique_id=1139093061]
 
 [node name="Player" parent="." unique_id=1504388918 instance=ExtResource("1_uhqqe")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1025029591]
-position = Vector2(0, 945)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=218844543]
-position = Vector2(978.5, 37)
-shape = SubResource("RectangleShape2D_n8mn6")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1333041447]
-position = Vector2(884, 873)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=394492280]
-shape = SubResource("RectangleShape2D_ify7c")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2029271558]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=587476558]
-position = Vector2(1526, 869)
-shape = SubResource("RectangleShape2D_wv6uw")
-
 [node name="Enemy" parent="." unique_id=1196418272 instance=ExtResource("2_ia1lp")]
 position = Vector2(769, 53)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=315036525]
+tile_map_data = PackedByteArray("AAAPAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_n8mn6")
