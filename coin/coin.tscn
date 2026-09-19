@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://pgxigto16k45"]
+
+[ext_resource type="Script" uid="uid://c1g7xg0vixt11" path="res://coin/coin.gd" id="1_script"]
+
+[sub_resource type="Gradient" id="Gradient_coin"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_coin"]
+gradient = SubResource("Gradient_coin")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coin"]
+radius = 50.0
+
+[node name="Coin" type="Node2D" unique_id=1441101537]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=402670917]
+texture = SubResource("GradientTexture2D_coin")
+offset = Vector2(0, -50)
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=625322852]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=241739319]
+position = Vector2(0, -50)
+shape = SubResource("CircleShape2D_coin")

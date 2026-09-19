@@ -9,6 +9,7 @@ const SQUISH_FROM_SCALE := Vector2(1.5, 0.2)
 
 const DeathBurstScene := preload("res://effects/death_burst.tscn")
 const HitBurstScene := preload("res://effects/hit_burst.tscn")
+const CoinScene := preload("res://coin/coin.tscn")
 
 
 @onready var state_machine: StateMachine = $StateMachine
@@ -43,5 +44,9 @@ func _die() -> void:
 	var death_burst: DeathBurst = DeathBurstScene.instantiate()
 	death_burst.global_position = collision_shape.global_position
 	get_parent().add_child(death_burst)
+
+	var coin: Coin = CoinScene.instantiate()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
 
 	queue_free()

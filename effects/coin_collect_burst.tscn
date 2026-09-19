@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://effects/coin_collect_burst.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://effects/star_burst.tscn" id="2_star"]
+[ext_resource type="PackedScene" path="res://effects/light_ring.tscn" id="3_ring"]
+[ext_resource type="PackedScene" path="res://effects/spark_particles.tscn" id="5_spark"]
+
+[node name="CoinCollectBurst" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="StarBurst" parent="." instance=ExtResource("2_star")]
+
+[node name="LightRing" parent="." instance=ExtResource("3_ring")]
+end_scale = 1.5
+
+[node name="SparkParticles" parent="." instance=ExtResource("5_spark")]

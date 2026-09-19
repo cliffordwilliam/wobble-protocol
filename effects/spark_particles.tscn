@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Gradient" uid="uid://bekjunmo2bsvt" path="res://white_gradient.tres" id="1_white"]
+[ext_resource type="Script" path="res://effects/spark_particles.gd" id="2_script"]
+[ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="3_fade"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_spark"]
+gradient = ExtResource("1_white")
+width = 40
+height = 40
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_spark"]
+gradient = ExtResource("3_fade")
+
+[sub_resource type="Curve" id="Curve_spark_scale"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_spark_scale"]
+curve = SubResource("Curve_spark_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spark"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 660.0
+initial_velocity_max = 900.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = 360.0
+angular_velocity_max = 720.0
+damping_min = 1050.0
+damping_max = 1500.0
+scale_min = 1.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_spark_scale")
+color_ramp = SubResource("GradientTexture1D_spark")
+
+[node name="SparkParticles" type="GPUParticles2D"]
+emitting = false
+amount = 5
+texture = SubResource("GradientTexture2D_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_spark")
+script = ExtResource("2_script")
