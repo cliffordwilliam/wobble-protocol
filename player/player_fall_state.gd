@@ -10,7 +10,7 @@ func physics_process(delta: float) -> void:
 	player.apply_gravity(delta)
 
 	var direction := player.move_horizontal(delta)
-	player.move(true)
+	player.move_and_slide()
 
 	player.update_air_squash()
 

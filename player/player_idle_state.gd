@@ -11,7 +11,7 @@ func enter(previous_state: State = null) -> void:
 
 func physics_process(delta: float) -> void:
 	var direction := player.move_horizontal(delta)
-	player.move()
+	player.move_and_slide()
 
 	if not player.is_on_floor():
 		state_machine.transition_to("PlayerFallState")

@@ -12,7 +12,7 @@ func physics_process(delta: float) -> void:
 	player.apply_gravity(delta, Player.RISE_GRAVITY if held else Player.FALL_GRAVITY)
 
 	player.move_horizontal(delta)
-	player.move()
+	player.move_and_slide()
 
 	if player.velocity.y >= 0.0:
 		state_machine.transition_to("PlayerFallState")
