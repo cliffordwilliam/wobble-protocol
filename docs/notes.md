@@ -61,3 +61,14 @@ This game rely on built in resources for the visual rendering.
 For the actors, we use reusable gradient resource and per actor creates inline gradient texture 2d.
 Tiles uses reusable gradient texture 2d instead.
 Actor can have different color using modulate, tiles can use per tile modulate attribute.
+
+## Connecting signals via code only
+
+Scene declares composition, script adds behavior.
+Signal wiring is behavior, so it belongs in the script.
+It also just diffs and greps better in git than a .tscn connection line does.
+
+## Checking for collision
+
+For collisions, all actors sees walls. enemy sees each other.
+For area detection. Player hurt area looks at enemy only.
