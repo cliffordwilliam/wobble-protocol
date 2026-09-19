@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" format=3 uid="uid://ds2bvx4jkp7gm"]
+
+[ext_resource type="Texture2D" uid="uid://bkuu7dvondyf1" path="res://tile_gradient_texture_2d.tres" id="1_tex"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coq8p"]
+texture = ExtResource("1_tex")
+texture_region_size = Vector2i(120, 120)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+
+[resource]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_coq8p")

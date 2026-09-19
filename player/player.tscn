@@ -35,6 +35,10 @@ shape = SubResource("RectangleShape2D_n8mn6")
 [node name="InvincibilityTimer" type="Timer" parent="." unique_id=1469858741]
 one_shot = true
 
+[node name="CameraTransform" type="RemoteTransform2D" parent="."]
+update_rotation = false
+update_scale = false
+
 [node name="StateMachine" type="Node" parent="." unique_id=922946872]
 script = ExtResource("2_sweqy")
 metadata/_custom_type_script = "uid://70u3fko08rfr"

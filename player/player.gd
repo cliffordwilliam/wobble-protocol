@@ -13,6 +13,7 @@ const INVINCIBLE_BLINK_DURATION := 0.1
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var invincibility_timer: Timer = $InvincibilityTimer
 @onready var hurt_area: Area2D = $HurtArea
+@onready var camera_transform: RemoteTransform2D = $CameraTransform
 
 var is_invincible := false
 var hurt_direction := 1.0
