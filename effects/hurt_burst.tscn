@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://effects/hurt_burst.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://effects/hit_burst.tscn" id="2_hit"]
+[ext_resource type="PackedScene" path="res://effects/light_ring.tscn" id="3_ring"]
+
+[node name="HurtBurst" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="HitBurst" parent="." instance=ExtResource("2_hit")]
+
+[node name="LightRing" parent="." instance=ExtResource("3_ring")]
+end_scale = 1.5

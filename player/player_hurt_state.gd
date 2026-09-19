@@ -1,7 +1,7 @@
 class_name PlayerHurtState
 extends PlayerState
 
-const HitBurstScene := preload("res://effects/hit_burst.tscn")
+const HurtBurstScene := preload("res://effects/hurt_burst.tscn")
 
 @onready var timer: Timer = $Timer
 
@@ -15,9 +15,9 @@ func enter(_previous_state: State = null) -> void:
 	player.is_invincible = true
 	player.velocity.x = Player.KNOCKBACK_VELOCITY * player.hurt_direction
 
-	var hit_burst: HitBurst = HitBurstScene.instantiate()
-	hit_burst.global_position = player.collision_shape.global_position
-	player.get_parent().add_child(hit_burst)
+	var hurt_burst: HurtBurst = HurtBurstScene.instantiate()
+	hurt_burst.global_position = player.collision_shape.global_position
+	player.get_parent().add_child(hurt_burst)
 
 	timer.start()
 
