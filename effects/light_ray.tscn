@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kcklcntehbqx"]
 
 [ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="1_vn7bn"]
-[ext_resource type="Script" uid="uid://b7on5plbtoeo0" path="res://enemy/light_ray.gd" id="2_bhja4"]
+[ext_resource type="Script" uid="uid://b7on5plbtoeo0" path="res://effects/light_ray.gd" id="2_bhja4"]
 
 [sub_resource type="Curve" id="Curve_d8wfm"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

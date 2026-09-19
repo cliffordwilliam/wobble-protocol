@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://effects/death_burst.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://effects/smoke_particles.tscn" id="2_smoke"]
+[ext_resource type="PackedScene" path="res://effects/light_flash.tscn" id="3_flash"]
+[ext_resource type="PackedScene" path="res://effects/light_orb_particles.tscn" id="4_orbs"]
+
+[node name="DeathBurst" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="SmokeParticles" parent="." instance=ExtResource("2_smoke")]
+
+[node name="LightFlash" parent="." instance=ExtResource("3_flash")]
+
+[node name="LightOrbParticles" parent="." instance=ExtResource("4_orbs")]

@@ -7,17 +7,8 @@ const SQUISH_IMPACT_DURATION := 0.1
 const SQUISH_SCALE := Vector2(1.2, 0.5)
 const SQUISH_FROM_SCALE := Vector2(1.5, 0.2)
 
-const RAY_COUNT := 4
-const RAY_LENGTH_MIN := 300.0
-const RAY_LENGTH_MAX := 400.0
-
-const HIT_RAY_COUNT := 2
-
-const SmokeParticlesScene := preload("res://enemy/smoke_particles.tscn")
-const LightFlashScene := preload("res://enemy/light_flash.tscn")
-const LightRayScene := preload("res://enemy/light_ray.tscn")
-const LightOrbParticlesScene := preload("res://enemy/light_orb_particles.tscn")
-const HitRayScene := preload("res://enemy/hit_ray.tscn")
+const DeathBurstScene := preload("res://effects/death_burst.tscn")
+const HitBurstScene := preload("res://effects/hit_burst.tscn")
 
 
 @onready var state_machine: StateMachine = $StateMachine
@@ -32,12 +23,9 @@ func move_horizontal() -> void:
 
 
 func squish() -> void:
-	var hit_angle_window := TAU / HIT_RAY_COUNT
-	for i in HIT_RAY_COUNT:
-		var hit_ray: HitRay = HitRayScene.instantiate()
-		hit_ray.global_position = collision_shape.global_position
-		hit_ray.rotation = hit_angle_window * i + randf_range(0.0, hit_angle_window)
-		get_parent().add_child(hit_ray)
+	var hit_burst: HitBurst = HitBurstScene.instantiate()
+	hit_burst.global_position = collision_shape.global_position
+	get_parent().add_child(hit_burst)
 
 	state_machine.transition_to("EnemySquishedState")
 
@@ -52,24 +40,8 @@ func play_squish() -> void:
 
 
 func _die() -> void:
-	var smoke: SmokeParticles = SmokeParticlesScene.instantiate()
-	smoke.global_position = collision_shape.global_position
-	get_parent().add_child(smoke)
-
-	var light_flash: LightFlash = LightFlashScene.instantiate()
-	light_flash.global_position = collision_shape.global_position
-	get_parent().add_child(light_flash)
-
-	var light_orbs: LightOrbParticles = LightOrbParticlesScene.instantiate()
-	light_orbs.global_position = collision_shape.global_position
-	get_parent().add_child(light_orbs)
-
-	var angle_window := TAU / RAY_COUNT
-	for i in RAY_COUNT:
-		var light_ray: LightRay = LightRayScene.instantiate()
-		light_ray.global_position = collision_shape.global_position
-		light_ray.rotation = angle_window * i + randf_range(0.0, angle_window)
-		light_ray.points = PackedVector2Array([Vector2.ZERO, Vector2(randf_range(RAY_LENGTH_MIN, RAY_LENGTH_MAX), 0.0)])
-		get_parent().add_child(light_ray)
+	var death_burst: DeathBurst = DeathBurstScene.instantiate()
+	death_burst.global_position = collision_shape.global_position
+	get_parent().add_child(death_burst)
 
 	queue_free()

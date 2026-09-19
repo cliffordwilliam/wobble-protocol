@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4pwwp461rbsd"]
 
 [ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="1_v0nhe"]
-[ext_resource type="Script" uid="uid://cea3j73fxfq7a" path="res://enemy/light_orb_particles.gd" id="2_5qxdu"]
+[ext_resource type="Script" uid="uid://cea3j73fxfq7a" path="res://effects/light_orb_particles.gd" id="2_5qxdu"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nbhh4"]
 gradient = ExtResource("1_v0nhe")

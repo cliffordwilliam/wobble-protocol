@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckjjtibtyevxm"]
 
 [ext_resource type="Gradient" uid="uid://5cn376wmqjbr" path="res://white_fade_gradient.tres" id="1_f7xho"]
-[ext_resource type="Script" uid="uid://cn20l42rvkqtk" path="res://enemy/light_flash.gd" id="1_oruob"]
+[ext_resource type="Script" uid="uid://cn20l42rvkqtk" path="res://effects/light_flash.gd" id="1_oruob"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etl30"]
 blend_mode = 1
