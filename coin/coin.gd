@@ -32,4 +32,6 @@ func _on_pickup_area_body_entered(body: Node2D) -> void:
 		coin_collect_burst.global_position = collision_shape.global_position
 		get_parent().add_child(coin_collect_burst)
 
+		GameState.add_coins(1)
+
 		queue_free()
