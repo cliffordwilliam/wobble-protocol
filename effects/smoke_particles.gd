@@ -1,7 +1,2 @@
 class_name SmokeParticles
-extends GPUParticles2D
-
-
-func _ready() -> void:
-	finished.connect(queue_free)
-	emitting = true
+extends OneShotParticles

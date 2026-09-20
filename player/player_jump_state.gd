@@ -15,4 +15,4 @@ func physics_process(delta: float) -> void:
 	player.move_and_slide()
 
 	if player.velocity.y >= 0.0:
-		state_machine.transition_to("PlayerFallState")
+		state_machine.transition_to(PlayerFallState)

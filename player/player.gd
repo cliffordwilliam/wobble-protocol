@@ -34,7 +34,7 @@ func _on_hurt_area_body_entered(body: Node2D) -> void:
 			velocity.y = JUMP_VELOCITY
 		elif not is_invincible:
 			hurt_direction = signf(global_position.x - body.global_position.x)
-			state_machine.transition_to("PlayerHurtState")
+			state_machine.transition_to(PlayerHurtState)
 
 
 func start_invincibility() -> void:

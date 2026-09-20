@@ -12,7 +12,7 @@ func physics_process(_delta: float) -> void:
 	enemy.move_and_slide()
 
 	if not enemy.is_on_floor():
-		state_machine.transition_to("EnemyFallState")
+		state_machine.transition_to(EnemyFallState)
 	elif enemy.is_on_wall():
 		enemy.direction = -enemy.direction
 		enemy.play_bounce()

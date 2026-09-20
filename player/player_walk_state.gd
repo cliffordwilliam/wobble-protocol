@@ -12,8 +12,8 @@ func physics_process(delta: float) -> void:
 	player.move_and_slide()
 
 	if not player.is_on_floor():
-		state_machine.transition_to("PlayerFallState")
+		state_machine.transition_to(PlayerFallState)
 	elif Input.is_action_just_pressed("ui_accept"):
-		state_machine.transition_to("PlayerJumpState")
+		state_machine.transition_to(PlayerJumpState)
 	elif direction == 0.0 or player.is_on_wall():
-		state_machine.transition_to("PlayerIdleState")
+		state_machine.transition_to(PlayerIdleState)

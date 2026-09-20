@@ -15,4 +15,4 @@ func physics_process(delta: float) -> void:
 	enemy.update_air_squash()
 
 	if enemy.is_on_floor():
-		state_machine.transition_to("EnemyWalkState")
+		state_machine.transition_to(EnemyWalkState)

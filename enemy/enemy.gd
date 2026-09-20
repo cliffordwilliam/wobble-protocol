@@ -28,14 +28,13 @@ func squish() -> void:
 	hit_burst.global_position = collision_shape.global_position
 	get_parent().add_child(hit_burst)
 
-	state_machine.transition_to("EnemySquishedState")
+	state_machine.transition_to(EnemySquishedState)
 
 
 func play_squish() -> void:
 	cancel_squash()
 	_squash_tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	_squash_tween.tween_property(sprite, "scale", SQUISH_FROM_SCALE, SQUISH_IMPACT_DURATION) \
-	.set_trans(Tween.TRANS_EXPO)
+	_squash_tween.tween_property(sprite, "scale", SQUISH_FROM_SCALE, SQUISH_IMPACT_DURATION).set_trans(Tween.TRANS_EXPO)
 	_squash_tween.tween_property(sprite, "scale", SQUISH_SCALE, SQUISH_DURATION)
 	_squash_tween.tween_callback(_die)
 

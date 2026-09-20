@@ -15,4 +15,4 @@ func physics_process(delta: float) -> void:
 	player.update_air_squash()
 
 	if player.is_on_floor() and player.velocity.y >= 0.0:
-		state_machine.transition_to("PlayerWalkState" if direction != 0.0 else "PlayerIdleState")
+		state_machine.transition_to(PlayerWalkState if direction != 0.0 else PlayerIdleState)

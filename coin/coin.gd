@@ -1,9 +1,9 @@
 class_name Coin
 extends Node2D
 
-const POP_HEIGHT := 200.0
+const POP_HEIGHT := 250.0
 const POP_DURATION := 0.2
-const SETTLE_DURATION := 0.7
+const SETTLE_DURATION := 1.0
 
 const SPIN_DURATION := 0.5
 
@@ -18,10 +18,8 @@ func _ready() -> void:
 	pickup_area.body_entered.connect(_on_pickup_area_body_entered)
 
 	var bounce_tween := create_tween()
-	bounce_tween.tween_property(sprite, "position:y", -POP_HEIGHT, POP_DURATION) \
-	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	bounce_tween.tween_property(sprite, "position:y", 0.0, SETTLE_DURATION) \
-	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	bounce_tween.tween_property(sprite, "position:y", -POP_HEIGHT, POP_DURATION).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	bounce_tween.tween_property(sprite, "position:y", 0.0, SETTLE_DURATION).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 	var spin_tween := create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	spin_tween.tween_property(sprite, "scale:x", 0.0, SPIN_DURATION)

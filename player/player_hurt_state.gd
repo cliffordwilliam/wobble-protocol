@@ -34,4 +34,4 @@ func physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	state_machine.transition_to("PlayerFallState" if not player.is_on_floor() else "PlayerIdleState")
+	state_machine.transition_to(PlayerFallState if not player.is_on_floor() else PlayerIdleState)

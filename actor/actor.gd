@@ -34,8 +34,7 @@ func update_air_squash() -> void:
 func play_bounce() -> void:
 	cancel_squash()
 	_squash_tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	_squash_tween.tween_property(sprite, "scale", Vector2.ONE, LAND_SQUASH_DURATION) \
-	.from(LAND_SQUASH_SCALE)
+	_squash_tween.tween_property(sprite, "scale", Vector2.ONE, LAND_SQUASH_DURATION).from(LAND_SQUASH_SCALE)
 
 
 func cancel_squash() -> void:
