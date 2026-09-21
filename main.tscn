@@ -14,6 +14,26 @@ position = Vector2(360, 960)
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=73961941]
 position_smoothing_enabled = true
 
+[node name="HillsParallax" type="Parallax2D" parent="." unique_id=1416008749]
+z_index = -200
+scroll_scale = Vector2(0.3, 0.05)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Hills" type="Polygon2D" parent="HillsParallax" unique_id=388970214]
+color = Color(0.06666667, 0.08627451, 0.17254902, 1)
+polygon = PackedVector2Array(0, 480, 150, 380, 300, 450, 480, 300, 650, 420, 820, 340, 1000, 460, 1200, 320, 1400, 440, 1680, 360, 1920, 480, 1920, 1080, 0, 1080)
+
+[node name="NearHillsParallax" type="Parallax2D" parent="." unique_id=1416008751]
+z_index = -150
+scroll_scale = Vector2(0.6, 0.1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="NearHills" type="Polygon2D" parent="NearHillsParallax" unique_id=265161029]
+color = Color(0.05, 0.07, 0.18, 0.75)
+polygon = PackedVector2Array(0, 560, 420, 620, 600, 500, 800, 580, 1020, 520, 1220, 600, 1450, 540, 1680, 610, 1920, 560, 1920, 1080, 0, 1080)
+
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1200560981]
 
 [node name="CoinCounter" parent="GUI" unique_id=2110062829 instance=ExtResource("6_coin_counter")]

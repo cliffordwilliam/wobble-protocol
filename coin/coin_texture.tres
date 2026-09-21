@@ -2,7 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_coin"]
 interpolation_mode = 1
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.84313726, 0.9019608, 0.92941177, 1, 1, 1, 1, 0)
 
 [resource]
 gradient = SubResource("Gradient_coin")

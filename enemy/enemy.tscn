@@ -21,6 +21,7 @@ collision_mask = 5
 script = ExtResource("1_p200p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=970109914]
+modulate = Color(0.26666668, 0.40392157, 0.6313726, 1)
 texture = SubResource("GradientTexture2D_cgllh")
 offset = Vector2(0, -60)
 

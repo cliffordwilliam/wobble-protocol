@@ -1,15 +1,43 @@
 [gd_resource type="TileSet" format=3 uid="uid://ds2bvx4jkp7gm"]
 
-[ext_resource type="Texture2D" uid="uid://bkuu7dvondyf1" path="res://tile_gradient_texture_2d.tres" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://dv6y735g4xy6c" path="res://tile_bottom_texture.tres" id="1_bottom"]
+[ext_resource type="Texture2D" uid="uid://bq6s7qf8venuf" path="res://tile_top_texture.tres" id="2_top"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coq8p"]
-texture = ExtResource("1_tex")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bottom"]
+texture = ExtResource("1_bottom")
 texture_region_size = Vector2i(120, 120)
 0:0/next_alternative_id = 2
 0:0/0 = 0
+0:0/0/terrain_set = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_top"]
+texture = ExtResource("2_top")
+texture_region_size = Vector2i(120, 120)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
 
 [resource]
 tile_size = Vector2i(120, 120)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_coq8p")
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Ground"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_bottom")
+sources/1 = SubResource("TileSetAtlasSource_top")
